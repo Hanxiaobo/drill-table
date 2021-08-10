@@ -1,70 +1,33 @@
-# Getting Started with Create React App
+# 支持上卷下钻的动态表格
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 接收三个参数
 
-## Available Scripts
+ columns = [
+    {
+      title: '一级分类',  // 表头文案
+      dataIndex: 's1',   // 字段key
+      filter: true,      // 是否是筛选项
+      average:true,      // 是否取平均值
+      rate: {            // 是否是百分比
+        numerator: 'reach',   // 分子字段key
+        denominator: 'mans'   // 分母字段key
+      }, 
+      toFixed: 2         // 取几位小数
+      },
+  ]
+  dataSource = [  // 表格数据
+    {id: 1, s1: '北部', s2: '河北',s3: '邯郸', mans: '5000', num: '10000', average: '2', reach: '3000', rate: '0.6'},
+    {id: 11, s1: '北部', s2: '河北',s3: '石家庄', mans: '4000', num: '12000', average: '3', reach: '3000', rate: '0.75'},
+    {id: 2, s1: '北部', s2: '山西',s3: '太原', mans: '4000', num: '20000', average: '5', reach: '2000', rate: '0.5'},
+    {id: 3, s1: '北部', s2: '北京',s3: '朝阳', mans: '8000', num: '16000', average: '2', reach: '2000', rate: '0.25'},
+    {id: 4, s1: '南部', s2: '江苏',s3: '南京', mans: '6000', num: '60000', average: '10', reach: '3000', rate: '0.5'},
+    {id: 5, s1: '南部', s2: '广东',s3: '广州', mans: '1000', num: '10000', average: '10', reach: '300', rate: '0.3'},
+    {id: 6, s1: '南部', s2: '浙江',s3: '温州', mans: '3000', num: '30000', average: '10', reach: '600', rate: '0.2'},
+    {id: 7, s1: '南部', s2: '湖南',s3: '长沙', mans: '5000', num: '15000', average: '3', reach: '200', rate: '0.04'},
+    {id: 71, s1: '南部', s2: '湖南',s3: '株洲', mans: '3000', num: '15000', average: '5', reach: '1000', rate: '0.33'},
+    {id: 8, s1: '西部', s2: '青海',s3: '西宁', mans: '7000', num: '7000', average: '1', reach: '700', rate: '0.1'},
+    {id: 9, s1: '西部', s2: '新疆',s3: '哈密', mans: '6000', num: '12000', average: '2', reach: '300', rate: '0.05'},
+    {id: 10, s1: '西部', s2: '陕西',s3: '咸阳', mans: '3000', num: '9000', average: '3', reach: '1500', rate: '0.5'},
+  ]
 
-In the project directory, you can run:
-
-### `yarn start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+  rowKey="id"   // 列表行循环所需唯一key
