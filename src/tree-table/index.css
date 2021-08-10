@@ -1,0 +1,20 @@
+.table {
+  border-collapse: collapse;
+}
+.table > thead {
+  white-space: nowrap;
+}
+th,
+td {
+  border: solid 1px #f0f0f0;
+  padding: 3px 5px;
+  cursor: pointer;
+}
+th {
+  background-color: #fafafa;
+  min-width: 80px;
+}
+.operate {
+  float: right;
+}
+
